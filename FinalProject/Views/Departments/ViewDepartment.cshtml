@@ -1,0 +1,35 @@
+﻿@model IEnumerable<FinalProject.Models.Department>
+
+@{
+    ViewBag.Title = "ViewDepartment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View All Department</h2>
+
+<p>
+    @Html.ActionLink("Save New Department", "SaveDepartment")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentName)
+        </td>
+    </tr>
+}
+
+</table>
